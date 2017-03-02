@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="target" value="System.out"/>
+        <layout class="com.github.bingoohuang.log4j.more.layout.MaskPatternLayout">
+            <param name="ConversionPattern" value="%-5p %d{yyyy-MM-dd HH:mm:ss,SSS} %C{1}:%M(line %L) - %m%n"/>
+            <param name="Patterns" value="(?&lt;!apptx=)\\b([0-9]{6})[0-9]{6}([0-9]{3}([0-9]{2}[0-9xX])?)\\b (\\d)\\d{3}(\\d)"/>
+            <param name="Masks" value="$1++++++$2 $1***$2"/>
+        </layout>
+    </appender>
+
+
+    <root>
+        <priority value="info"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</log4j:configuration>

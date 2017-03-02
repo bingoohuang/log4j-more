@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+    <appender name="BLACKCAT" class="com.github.bingoohuang.log4j.more.appenders.BlackcatAppender">
+        <param name="target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %d{yyyy-MM-dd HH:mm:ss,SSS} %C{1}:%M(line %L) - %m"/>
+        </layout>
+    </appender>
+
+
+    <root>
+        <priority value="info"/>
+        <appender-ref ref="BLACKCAT"/>
+    </root>
+</log4j:configuration>
